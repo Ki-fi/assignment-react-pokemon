@@ -1,1 +1,7 @@
-/*Schrijf hier jouw eigen CSS!*/
+
+button {
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
