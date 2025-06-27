@@ -1,6 +1,6 @@
 import './Card.css';
 
-function Card({ name, imgUrl, nrOfMoves, weight, ability }) {
+function Card({ name, imgUrl, nrOfMoves, weight, abilities = [] }) {
     return (
         <article className="card">
             <h3>{name}</h3>
@@ -8,7 +8,15 @@ function Card({ name, imgUrl, nrOfMoves, weight, ability }) {
             <p><strong>Moves: </strong>{nrOfMoves}</p>
             <p><strong>Weight: </strong>{weight}</p>
             <p><strong>Abilities:</strong></p>
-            <div className="chip">{ability}</div>
+
+            {abilities && abilities.map(ability => {
+                return (
+                    <div
+                        key={ability.ability.name}
+                        className="chip">{ability.ability.name}
+                    </div>
+                )
+            })}
         </article>
     )
 }

@@ -2,13 +2,12 @@
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 16px;
-    border-radius: 8px;
-    flex-wrap: wrap;
+    border-radius: 4px;
+    box-shadow: 1px 6px 19px -4px rgba(0,0,0,0.84);
     background-color: white;
-    flex-grow: 1;
-    flex-shrink: 0;
+    width: 160px;
 }
 
 

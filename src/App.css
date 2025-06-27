@@ -12,18 +12,28 @@
     gap: 8px;
 }
 
-button {
-    background-color: darkblue;
+.button {
+    background-color: #0b3a9f;
     color: white;
+    border: 2px solid black;
     font-weight: bold;
     cursor: pointer;
+}
+
+.button:disabled {
+    background-color: rgba(11, 58, 159, 0.53);
+    color: rgba(255, 255, 255, 0.53);
 }
 
 .pokemon-container {
     display: flex;
     justify-content: center;
-    gap: 24px;
-    align-items: flex-start;
+    gap: 16px;
+    align-items: stretch;
     flex-wrap: wrap;
     margin: 0 80px;
+}
+
+.logo {
+    width: 400px;
 }

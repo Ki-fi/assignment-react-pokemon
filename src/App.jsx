@@ -2,6 +2,7 @@ import './App.css'
 import {useEffect, useState} from "react";
 import Card from "./components/Card.jsx";
 import axios from "axios";
+import logo from "./assets/poke-logo.png";
 
 function App() {
 
@@ -42,17 +43,17 @@ const offset = page * 20;
   return (
     <>
       <div className="page-container">
-      <h1>Gotta catch em all!</h1>
+          <img src={logo} alt="pokemon logo" className="logo" />
           <div className="buttons">
-            <button
+            <button className="button"
                 type="button"
                 onClick={() => {setPage(page - 1)}}
                 disabled={page === 0}
             >Vorige</button>
-            <button
+            <button className="button"
                 type="button"
                 onClick={() => {setPage(page + 1)}}
-            >Vorige</button>
+            >Volgende</button>
           </div>
 
         <div className="pokemon-container">
@@ -63,14 +64,12 @@ const offset = page * 20;
                         imgUrl={pokemon.sprites.front_default}
                         nrOfMoves={pokemon.moves.length}
                         weight={pokemon.weight}
-                        ability={pokemon.abilities[0]?.ability.name}
+                        abilities={pokemon.abilities}
                     />
-            )
-        )
-        }
-        </div>
-        </div>
-</>
+            ))}
+      </div>
+      </div>
+    </>
     )
 }
 
