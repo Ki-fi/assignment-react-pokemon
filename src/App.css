@@ -1,10 +1,15 @@
-.page-container {
+body {
     background-color: #fac136;
+}
+
+.page-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 24px;
+    width: 100vw;
+    height: auto;
 }
 
 .buttons {
@@ -31,7 +36,7 @@
     gap: 16px;
     align-items: stretch;
     flex-wrap: wrap;
-    margin: 0 80px;
+    margin: 0 80px 32px 80px;
 }
 
 .logo {

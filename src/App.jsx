@@ -9,7 +9,7 @@ function App() {
 const [pokemonList, setPokemonList] = useState([]);
 const [pokemonDetails, setPokemonDetails] = useState([]);
 const [loading, setLoading] = useState(true);
-const [error, setError] = useState(null);
+const [error, setError] = useState(false);
 const [page, setPage] = useState(0);
 const offset = page * 20;
 
@@ -17,6 +17,8 @@ const offset = page * 20;
 
         async function catchEmAll() {
             setLoading(true);
+            setError(false);
+            setPokemonDetails([]);
             try { const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`);
                 const results = response.data.results;
 
@@ -25,15 +27,17 @@ const offset = page * 20;
                     const res = await axios.get(pokemon.url);
                     details.push(res.data);
                 }
-
                 setPokemonList(results);
                 setPokemonDetails(details);
 
             } catch(e) {
                 console.error(e);
+                setError(true);
             } finally {
                 setLoading(false);
             }
+
+            return function Cleanup(){};
         }
 
         catchEmAll();
@@ -53,11 +57,13 @@ const offset = page * 20;
             <button className="button"
                 type="button"
                 onClick={() => {setPage(page + 1)}}
+                disabled={page === page.length - 1}
             >Volgende</button>
           </div>
 
         <div className="pokemon-container">
-        {pokemonDetails && pokemonDetails.length > 0 && pokemonDetails.map((pokemon) => (
+            {loading && <p>LOADING</p>}
+            {!loading && pokemonDetails.length > 0 && pokemonDetails.map((pokemon) => (
                     <Card
                         key={pokemon.id}
                         name={pokemon.name}
@@ -67,6 +73,7 @@ const offset = page * 20;
                         abilities={pokemon.abilities}
                     />
             ))}
+            {error && <p>Er is iets misgegaan, check je internet connectie en probeer opnieuw.</p>}
       </div>
       </div>
     </>
