@@ -45,7 +45,6 @@ const offset = page * 20;
     }, [page]);
 
   return (
-    <>
       <div className="page-container">
           <img src={logo} alt="pokemon logo" className="logo" />
           <div className="buttons">
@@ -76,7 +75,6 @@ const offset = page * 20;
             {error && <p>Er is iets misgegaan, check je internet connectie en probeer opnieuw.</p>}
       </div>
       </div>
-    </>
     )
 }
 
