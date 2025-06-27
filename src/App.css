@@ -1,1 +1,44 @@
-/*Schrijf hier jouw eigen CSS!*/
+body {
+    background-color: #fac136;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    width: 100vw;
+    height: auto;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.button {
+    background-color: #0b3a9f;
+    color: white;
+    border: 2px solid black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:disabled {
+    background-color: rgba(11, 58, 159, 0.53);
+    color: rgba(255, 255, 255, 0.53);
+}
+
+.pokemon-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 0 80px 32px 80px;
+}
+
+.logo {
+    width: 400px;
+}

@@ -1,0 +1,24 @@
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 1px 6px 19px -4px rgba(0,0,0,0.84);
+    background-color: white;
+    width: 160px;
+}
+
+
+.card .chip {
+    text-align: center;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.card img {
+    width: 100%;
+}
